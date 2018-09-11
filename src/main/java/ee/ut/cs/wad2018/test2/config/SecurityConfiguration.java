@@ -1,4 +1,4 @@
-package ee.ut.cs.wad2018.test2;
+package ee.ut.cs.wad2018.test2.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
