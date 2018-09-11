@@ -1,12 +1,12 @@
-package raamatupood;
+package ee.ut.cs.wad2018.test2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class Test2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(Test2Application.class, args);
 	}
 }
