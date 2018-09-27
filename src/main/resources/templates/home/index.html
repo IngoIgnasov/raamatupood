@@ -8,13 +8,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
 </head>
 <body>
-    <div class="uk-grid-match uk-text-center">
-        <div class="uk-container-expand uk-text-center uk-background-muted">
-            <h1>Raamatupood</h1>
-            <form action="http://localhost:8080/sisesta" method="post">
-                <input placeholder="Otsi raamatuid!" type="text" name="otsing" class="uk-input uk-width-1-2">
+
+    <div class="uk-container-expand uk-text-center">
+        <div class="uk-grid-large" uk-grid>
+            <div class="uk-card uk-card-body uk-background-default uk-width-4-5">
+                <h1 class="uk-card-title">Raamatupood</h1>
+            </div>
+            <div class="uk-card uk-card-body uk-card-default uk-width-1-5">
+                <form>
+                    <button class="uk-button-default uk-align-center">Log In</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="uk-grid-match ">
+        <div class="uk-container-expand uk-text-center uk-background-muted uk-text-center">
+            <form>
+                <input placeholder="Otsi raamatuid!" type="text" class="uk-input uk-width-1-2">
+                <button class="uk-button uk-button-default uk-width-small uk-align-center">Otsi</button>
             </form>
-            <button class="uk-button uk-button-default uk-width-small uk-align-center">Otsi</button>
+
         </div>
     </div>
 
