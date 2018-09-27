@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/test")
+@RestController()
 public class DataController {
     private DataService dataService;
 
@@ -16,7 +16,7 @@ public class DataController {
         this.dataService = dataService;
     }
 
-    @GetMapping
+    @GetMapping("/test")
     public List<ActorEntity> getActorsByName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName){
         return dataService.getActorsByName(firstName, lastName);
     }
