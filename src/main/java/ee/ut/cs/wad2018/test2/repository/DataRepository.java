@@ -27,6 +27,5 @@ public class DataRepository {
             return actorEntity;
         }, firstName, lastName);
 
-
     }
 }
