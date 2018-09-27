@@ -25,10 +25,10 @@ public class OtsingController {
     public List<OtsingEntity> getOtsingudByID(@RequestParam("id") int id){
         return otsingService.getOtsingudByID(id);
     }
-    @GetMapping("/sisesta")
+    @PostMapping("/sisesta")
     public ResponseEntity<Object> sisesta(@RequestParam("otsing")String otsing) throws URISyntaxException{
         otsingService.otsingUpdate(otsing);
-        URI uri = new URI("http://localhost:8080/");
+        URI uri = new URI("http://localhost:8080/test");
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setLocation(uri);
         return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
