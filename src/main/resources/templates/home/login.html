@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!--Client ID: 340061687253-d65vch82on86vtd80aiesrijumc7gb9p.apps.googleusercontent.com
+    Client Secret: eXVvyIg-9OiYz_ZygmB-gSJr-->
     <head>
         <meta charset="UTF-8">
+        <meta name="google-signin-client_id" content="340061687253-d65vch82on86vtd80aiesrijumc7gb9p.apps.googleusercontent.com">
         <title>Log In</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
     </head>
-    <body>
-    <div class="uk-ali">
+    <body class="uk-height-viewport" >
+        <div class="uk-container uk-container-small   uk-align-center uk-position-center">
+            <div class="uk-flex-column uk-flex-stretch  uk-flex uk-height-1-1 uk-flex-middle uk-padding-large">
+                <img src="https://image.freepik.com/free-icon/a-couple-of-books_318-30839.jpg" width="100px" class="uk-margin-small">
 
-    </div>
-
+                <form class="uk-form uk-card-default uk-card uk-card-body">
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                </form>
+            </div>
+        </div>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
     </body>
 </html>
