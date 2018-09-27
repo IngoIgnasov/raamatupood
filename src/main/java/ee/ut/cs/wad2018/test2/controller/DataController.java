@@ -15,10 +15,10 @@ public class DataController {
     public DataController(DataService dataService) {
         this.dataService = dataService;
     }
-
+/**
     @GetMapping("/test")
     public List<ActorEntity> getActorsByName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName){
         return dataService.getActorsByName(firstName, lastName);
     }
-
+*/
 }
