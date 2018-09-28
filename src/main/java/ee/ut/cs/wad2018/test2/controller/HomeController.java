@@ -14,8 +14,20 @@ public class HomeController {
     }
 
 
+    //@PostMapping("/test")
+
+
     @PostMapping("/login")
         public String getLoginPage () {
             return "home/login.html";
         }
+
+
+    @PostMapping("/account")
+    public String getAccountPage () {
+        return "home/account.html";
     }
+}
+
+
+
