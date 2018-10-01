@@ -28,7 +28,8 @@ public class OtsingController {
     @PostMapping("/sisesta")
     public ResponseEntity<Object> sisesta(@RequestParam("otsing")String otsing) throws URISyntaxException{
         otsingService.otsingUpdate(otsing);
-        URI uri = new URI("http://localhost:8080/test");
+        //return back home
+        URI uri = new URI("/test");
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setLocation(uri);
         return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
