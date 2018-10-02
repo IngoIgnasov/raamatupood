@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+    <style>
+        #navbar ul{
+            display: none;
+            background-color: #0066ff;
+            position: absolute;
+            top: 100%;
+        }
+        #navbar li:hover ul { display: block; }
+        #navbar, #navbar ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        #navbar {
+            height: 30px;
+            background-color: #969696
+        ; ;
+            padding-left: 25px;
+            min-width: 470px;
+        }
+        #navbar li {
+            float: left;
+            position: relative;
+            height: 100%;
+        }
+        #navbar li a {
+            display: block;
+            padding: 6px;
+            width: 100px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+        }
+        #navbar ul li { float: none; }
+        #navbar li:hover { background-color: #0066ff; }
+        #navbar ul li:hover { background-color: #969696; ; }
+    </style>
 
 </head>
+
 <body>
 
 <div class="uk-container-expand uk-text-center">
@@ -29,6 +66,13 @@
 
 </div>
 
+<ul id="navbar">
+    <li><a href="/">Esileht</a></li>
+    <li><a href="/">Raamatud</a></li>
+    <li><a href="/">Bürootarbed</a></li>
+    <li><a href="contact">Kontakt</a></li>
+</ul>
+
 <div class="uk-grid-match ">
     <div class="uk-container-expand uk-text-center uk-background-muted uk-text-center">
         <h1>Kontakt</h1>
@@ -48,7 +92,6 @@
     <p>Kui tekib küsimusi, siis kirjuta meile! info@raamatupood.ee</p>
 
 </div>
-
 
 
 </body>
