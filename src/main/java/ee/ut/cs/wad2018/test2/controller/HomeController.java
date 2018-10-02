@@ -27,6 +27,9 @@ public class HomeController {
     public String getAccountPage () {
         return "home/account.html";
     }
+
+    @RequestMapping(value="/contact", method = {RequestMethod.GET, RequestMethod.POST} )
+    public String getContactPage(){return "home/contact.html";}
 }
 
 
