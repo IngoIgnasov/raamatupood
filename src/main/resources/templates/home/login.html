@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!--Client ID: 340061687253-d65vch82on86vtd80aiesrijumc7gb9p.apps.googleusercontent.com
-    Client Secret: eXVvyIg-9OiYz_ZygmB-gSJr-->
+    <!--Client ID: 340061687253-aemesn4rershit8q67pemdjl8itm6la0.apps.googleusercontent.com
+    Client Secret: XreL1hh5MgxYEXC24Qld-4Bn-->
     <head>
         <meta charset="UTF-8">
-        <meta name="google-signin-client_id" content="340061687253-d65vch82on86vtd80aiesrijumc7gb9p.apps.googleusercontent.com">
+        <meta name="google-signin-client_id" content="340061687253-aemesn4rershit8q67pemdjl8itm6la0.apps.googleusercontent.com">
         <title>Log In</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+        <script src="js/account.js"></script>
     </head>
     <body class="uk-height-viewport" >
         <div class="uk-container uk-container-small   uk-align-center uk-position-center">
@@ -20,6 +21,18 @@
                 </form>
             </div>
         </div>
+
+        <a href="#" onclick="signOut();">Sign out</a>
+        <script>
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            }
+        </script>
+
+
         <script src="https://apis.google.com/js/platform.js" async defer></script>
     </body>
 </html>
