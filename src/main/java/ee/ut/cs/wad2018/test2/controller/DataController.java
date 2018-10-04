@@ -22,7 +22,7 @@ public class DataController {
         return dataService.getActorsByName(firstName, lastName);
     }
 */
-    @GetMapping("/postraamat")
+    @PostMapping("/postraamat")
     public List<RaamatEntity> getRaamatudByName(@RequestParam("name") String name, @RequestParam("author") String author){
         return dataService.getRaamatudByName(name,author);
     }
