@@ -16,27 +16,41 @@
 <div id="result"></div>
 
 <script>
-    // Attach a submit handler to the form
-    $( "#searchForm" ).submit(function( event ) {
+    $("#foo").submit(function(event) {
+        var ajaxRequest;
 
-        // Stop form from submitting normally
+        /* Stop form from submitting normally */
         event.preventDefault();
 
-        // Get some values from elements on the page:
-        var $form = $( this ),
-            nimi = $form.find( "input[name='s']" ).val(),
-            autor = $form.find( "input[name='s2']").val(),
-            url = $form.attr( "action" );
+        /* Clear result div*/
+        $("#searchForm").html('');
 
-        // Send the data using post
-        var posting = $.post( url, { s: nimi } );
+        /* Get from elements values */
+        var values = $(this).serialize();
 
-        // Put the results in a div
-        posting.done(function( data ) {
-            var content = $( data ).find( "#content" );
-            $( "#result" ).empty().append( content );
+        /* Send the data using post and put the results in a div */
+        /* I am not aborting previous request because It's an asynchronous request, meaning
+           Once it's sent it's out there. but in case you want to abort it  you can do it by
+           abort(). jQuery Ajax methods return an XMLHttpRequest object, so you can just use abort(). */
+        ajaxRequest= $.ajax({
+            url: "/postraamat",
+            type: "post",
+            data: values
         });
-    });
+
+        /*  request cab be abort by ajaxRequest.abort() */
+
+        ajaxRequest.done(function (response, textStatus, jqXHR){
+            // show successfully for submit message
+            $("#result").html('Submitted successfully');
+        });
+
+        /* On failure of request this function will be called  */
+        ajaxRequest.fail(function (){
+
+            // show error
+            $("#result").html('There is error while submit');
+        });
 </script>
 
 </body>
