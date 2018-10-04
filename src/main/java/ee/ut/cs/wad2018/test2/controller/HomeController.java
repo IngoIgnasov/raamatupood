@@ -29,12 +29,12 @@ public class HomeController {
         return "home/account.html";
     }
 
-    @GetMapping(value = "/contact")
+    @GetMapping("/contact")
     public String getContactPage() {
         return "home/contact.html";
     }
 
-    @GetMapping(value = "/raamatpostform")
+    @GetMapping("/raamatpostform")
     public String getRaamatPage() {
         return "home/raamat.html";
     }
