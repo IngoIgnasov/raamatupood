@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form action="/postraamat" id="searchForm">
+<form action="/postraamat" method="post" id="searchForm">
     <input type="text" name="s" placeholder="Pealkiri...">
     <input type="text" name="s2" placeholder="Autor...">
     <input type="submit" value="Search">
@@ -37,9 +37,7 @@
             type: "post",
             data: values
         });
-
         /*  request cab be abort by ajaxRequest.abort() */
-
         ajaxRequest.done(function (response, textStatus, jqXHR){
             // show successfully for submit message
             $("#result").html('Submitted successfully');
