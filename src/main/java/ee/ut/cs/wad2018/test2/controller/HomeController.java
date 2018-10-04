@@ -19,18 +19,25 @@ public class HomeController {
 
 
     @PostMapping("/login")
-        public String getLoginPage () {
-            return "home/login.html";
-        }
+    public String getLoginPage() {
+        return "home/login.html";
+    }
 
 
     @PostMapping("/account")
-    public String getAccountPage () {
+    public String getAccountPage() {
         return "home/account.html";
     }
 
-    @GetMapping(value="/contact")
-    public String getContactPage(){return "home/contact.html";}
+    @GetMapping(value = "/contact")
+    public String getContactPage() {
+        return "home/contact.html";
+    }
+
+    @GetMapping(value = "/raamatpostform")
+    public String getRaamatPage() {
+        return "home/raamat.html";
+    }
 }
 
 
