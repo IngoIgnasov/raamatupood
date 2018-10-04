@@ -1,6 +1,7 @@
 package ee.ut.cs.wad2018.test2.controller;
 
 import ee.ut.cs.wad2018.test2.entity.ActorEntity;
+import ee.ut.cs.wad2018.test2.entity.RaamatEntity;
 import ee.ut.cs.wad2018.test2.service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,4 +22,9 @@ public class DataController {
         return dataService.getActorsByName(firstName, lastName);
     }
 */
+    @GetMapping("/postraamat")
+    public List<RaamatEntity> getRaamatudByName(@RequestParam("name") String name, @RequestParam("author") String author){
+        return dataService.getRaamatudByName(name,author);
+    }
+
 }

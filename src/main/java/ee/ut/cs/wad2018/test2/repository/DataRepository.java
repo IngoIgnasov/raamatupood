@@ -1,6 +1,7 @@
 package ee.ut.cs.wad2018.test2.repository;
 
 import ee.ut.cs.wad2018.test2.entity.ActorEntity;
+import ee.ut.cs.wad2018.test2.entity.RaamatEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -26,6 +27,24 @@ public class DataRepository {
             actorEntity.setLastName(rs.getString("last_name"));
             return actorEntity;
         }, firstName, lastName);
+
+    }
+
+    public List<RaamatEntity> getRaamatByNameAndAuthor(String name, String author) {
+        String sql = "select * from raamatud where pealkiri = ? and autor = ?";
+
+        return jdbcTemplate.query(sql, (rs, rowNum) -> {
+            RaamatEntity raamatEntity = new RaamatEntity();
+            raamatEntity.setPealkiri(rs.getString("pealkiri"));
+            raamatEntity.setAutor(rs.getString("autor"));
+            raamatEntity.setKirjastus(rs.getString("kirjastus"));
+            raamatEntity.setLk(rs.getInt("lk"));
+            raamatEntity.setClickide_arv(rs.getInt("clickide_arv"));
+            raamatEntity.setLisamise_aeg(rs.getTimestamp("lisamise_aeg"));
+            raamatEntity.setHind(rs.getInt("hind"));
+            raamatEntity.setPilt(rs.getBytes("pilt"));
+            return raamatEntity;
+        }, name, author);
 
     }
 }
