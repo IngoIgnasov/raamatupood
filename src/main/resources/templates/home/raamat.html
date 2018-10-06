@@ -26,7 +26,7 @@
         $.ajax({
             url: '/postraamat',
             type: 'POST',
-            data: jQuery.param({field1: "hello", field2: "hello2"}),
+            data: jQuery.param({name: "hello", author: "hello2"}),
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
             success: function (response) {
                 alert(response.status);
