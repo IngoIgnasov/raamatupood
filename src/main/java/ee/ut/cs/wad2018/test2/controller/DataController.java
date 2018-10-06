@@ -27,4 +27,9 @@ public class DataController {
         return dataService.getRaamatudByName(name,author);
     }
 
+    @PostMapping("/allraamatud")
+    public List<RaamatEntity> getAllBooks(){
+        return dataService.getAllRaamatud();
+    }
+
 }

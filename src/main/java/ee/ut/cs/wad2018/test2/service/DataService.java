@@ -23,4 +23,7 @@ public class DataService {
     public List<RaamatEntity> getRaamatudByName(String name, String author) {
         return dataRepository.getRaamatByNameAndAuthor(name,author);
     }
+    public List<RaamatEntity> getAllRaamatud() {
+        return dataRepository.getAllBooks();
+    }
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -34,17 +36,30 @@ public class DataRepository {
         String sql = "select * from raamatud where pealkiri = ? and autor = ?";
 
         return jdbcTemplate.query(sql, (rs, rowNum) -> {
-            RaamatEntity raamatEntity = new RaamatEntity();
-            raamatEntity.setPealkiri(rs.getString("pealkiri"));
-            raamatEntity.setAutor(rs.getString("autor"));
-            raamatEntity.setKirjastus(rs.getString("kirjastus"));
-            raamatEntity.setLk(rs.getInt("lk"));
-            raamatEntity.setClickide_arv(rs.getInt("clickide_arv"));
-            raamatEntity.setLisamise_aeg(rs.getTimestamp("lisamise_aeg"));
-            raamatEntity.setHind(rs.getInt("hind"));
-            raamatEntity.setPilt(rs.getBytes("pilt"));
-            return raamatEntity;
+            return mapValuesFromDBtoRaamarEntity(rs);
         }, name, author);
 
+    }
+
+    public List<RaamatEntity> getAllBooks() {
+        String sql = "select * from raamatud";
+
+        return jdbcTemplate.query(sql, (rs, rowNum) -> {
+            return mapValuesFromDBtoRaamarEntity(rs);
+        });
+
+    }
+
+    private RaamatEntity mapValuesFromDBtoRaamarEntity(ResultSet rs) throws SQLException {
+        RaamatEntity raamatEntity = new RaamatEntity();
+        raamatEntity.setPealkiri(rs.getString("pealkiri"));
+        raamatEntity.setAutor(rs.getString("autor"));
+        raamatEntity.setKirjastus(rs.getString("kirjastus"));
+        raamatEntity.setLk(rs.getInt("lk"));
+        raamatEntity.setClickide_arv(rs.getInt("clickide_arv"));
+        raamatEntity.setLisamise_aeg(rs.getTimestamp("lisamise_aeg"));
+        raamatEntity.setHind(rs.getInt("hind"));
+        raamatEntity.setPilt(rs.getBytes("pilt"));
+        return raamatEntity;
     }
 }

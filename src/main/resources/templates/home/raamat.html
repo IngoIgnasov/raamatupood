@@ -4,44 +4,86 @@
     <meta charset="utf-8">
     <title>raamatupost test</title>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('form').submit(function (evt) {
+                evt.preventDefault();
+                //puhastan div
+                $("#result").html('');
+
+                //võtan formidelt andmed
+                var title = $("#title").val();
+                var author = $("#author").val();
+                console.log(title);
+                console.log(author);
+                //teen ajaxiga query ja kuvan pildi lehele
+                $.ajax({
+                    url: '/postraamat',
+                    type: 'POST',
+                    data: jQuery.param({name: title, author: author}),
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        //loome pildi ja lisame result divi
+                        var img = $('<img id="dynamic">');
+                        img.attr("width","200");
+                        img.attr("src", "data:image/jpeg;base64," + response[0].pilt);
+                        img.appendTo("#result");
+                    },
+                    error: function () {
+                        alert("error");
+                        $("#result").html('Some kind of error :( !');
+                    }
+                });
+                $(this).trigger("reset");
+
+            });
+            //nupu vajutusel kuvan kõik raamatud
+            $('#btn').click(function () {
+                //puastan vastuse divi ära
+                $("#result").empty();
+                $.ajax({
+                    url: '/allraamatud',
+                    type: 'POST',
+                    data: jQuery.param({name: "Matilda", author: "Roald Dahl"}),
+                    dataType: "json",
+                    success: function (response) {
+
+                        console.log(response);
+
+                        //teeme for lüüpi JSON-i paele, loome iga raamatu kohta uue img elemendi ja lisame selle div-i
+                        var length = response.length;
+                        var i;
+                        for (i = 0; i < length; i++) {
+                            var img = $('<img id="dynamic">');
+                            img.attr("width","200");
+                            img.attr("src", "data:image/jpeg;base64," + response[i].pilt);
+                            img.appendTo("#result");
+                        }
+                    },
+                    error: function () {
+                        alert("error");
+                        $("#result").html('Some kind of error :( !');
+                    }
+                });
+
+            });
+        })
+    </script>
+
 </head>
+
 <body>
 
-<form action="/postraamat" method="post" id="searchForm">
-    <input type="text" name="s" placeholder="Pealkiri...">
-    <input type="text" name="s2" placeholder="Autor...">
-    <input type="submit" value="Search">
+<form action="/postraamat" method="post" id="form" name="form">
+    <input type="text" name="title" placeholder="Pealkiri..." id="title">
+    <input type="text" name="author" placeholder="Autor..." id="author">
+    <input name=submit type="submit" value="Search">
 </form>
-<!-- the result of the search will be rendered inside this div -->
+<input id="btn" type="button" value="Kuva kõik raamatud andmebaasist"/>
 <div id="result"></div>
-
-<script>
-    $("#foo").submit(function (event) {
-        var ajaxRequest;
-        event.preventDefault();
-
-        /* Clear result div*/
-        $("#result").html('');
-
-        $.ajax({
-            url: '/postraamat',
-            type: 'POST',
-            data: jQuery.param({name: "hello", author: "hello2"}),
-            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-            success: function (response) {
-                alert(response.status);
-                $("result").html('Successful search!');
-            },
-            error: function () {
-                alert("error");
-                $("result").html('Some kind of error :( !');
-
-
-            }
-        });
-
-    });
-</script>
+<!--<img src="data:image/png;base64,changethis" alt="Red dot" id="minupilt" width="200">-->
 
 </body>
 </html>
