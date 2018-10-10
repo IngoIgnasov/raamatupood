@@ -8,19 +8,96 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
         <script src="js/account.js"></script>
     </head>
-    <body class="uk-width-1-1 uk-height-viewport">
-        <div class="uk-container-expand uk-container  uk-align-center uk-height-viewport" >
-            <div class="uk-flex uk-flex-large  uk-position-center uk-height-medium uk-width-large uk-padding-large uk-margin-large uk-card uk-card-body uk-card-default">
-                <img alt="Siin on sinu profiilipilt" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&h=350">
+
+    <body>
+
+
+
+    <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://www.freewebheaders.com/wordpress/wp-content/gallery/bridges/beautiful-bridge-lights-header.jpg" uk-img>
+        <h1>Raamatupood(hiljem teeme siia ilusa bänneri)</h1>
+    </div>
+
+    <div class="uk-background-fixed uk-height-viewport uk-width-1-1" style="background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Sky-Wallpapers-HD.jpg);">
+
+
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="/">Esileht</a></li>
+                    <li>
+                        <a href="raamatpostform">Raamatud</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-nav-header">Eesti keelsed raamatud</li>
+                                <li><a href="#">Ilukirjandus</a></li>
+                                <li><a href="#">Teadus</a></li>
+                                <li><a href="#">Laste raamatud</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li class="uk-nav-header">Inglise keelsed raamatud</li>
+                                <li><a href="#">Ilukirjandus</a></li>
+                                <li><a href="#">Teadus</a></li>
+                                <li><a href="#">Laste raamatud</a></li>
+                                <li class="uk-nav-divider"></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="contact">Kontakt</a>
+                    </li>
+                    <li>
+                        <div class="uk-navbar-item">
+
+                            <form action="/sisesta" method="post">
+                                <label for="otsing">Raamatuotsing: </label>
+                                <input class="uk-input uk-form-width-small" type="text" name="otsing" placeholder="Otsi raamatuid!" id="otsing">
+                                <button class="uk-button uk-button-default">Otsi</button>
+                            </form>
+                        </div>
+
+                    </li>
+                </ul>
+
+            </div>
+            <div class="uk-navbar-right">
+
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <div class="uk-navbar-item">
+                            <form action="/login" method="post">
+                                <button class="uk-button-default uk-button">Log In</button>
+                            </form>
+                            <form action="/account" method="post">
+                                <button class="uk-button-default uk-button">Account</button>
+                            </form>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+
+
+        <hr style="height:200pt; visibility:hidden;" />
+
+
+        <div class="uk-container-expand uk-container" >
+            <div class=" uk-card uk-card-body uk-card-default uk-align-center">
+                <img  class="uk-align-center" alt="Siin on sinu profiilipilt" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&h=350">
                 <div class="uk-text-center uk-margin-medium">
                     <p id="name">Siia tuleb nimi!</p>
                     <p>email!</p>
-                    <form action="/" method = "get">
-                        <button class="uk-button uk-button-default">ajutine back nupp</button>
-                    </form>
+                    <p>info</p>
+                    <p>info</p>
+                    <p>info</p>
                 </div>
             </div>
         </div>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+        <hr style="height:400pt; visibility:hidden;" />
+    </div>
+
     </body>
 </html>
