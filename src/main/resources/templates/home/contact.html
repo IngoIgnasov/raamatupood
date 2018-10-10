@@ -6,82 +6,85 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
-    <style>
-        #navbar ul{
-            display: none;
-            background-color: #0066ff;
-            position: absolute;
-            top: 100%;
-        }
-        #navbar li:hover ul { display: block; }
-        #navbar, #navbar ul{
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
-        #navbar {
-            height: 30px;
-            background-color: #969696
-        ; ;
-            padding-left: 25px;
-            min-width: 470px;
-        }
-        #navbar li {
-            float: left;
-            position: relative;
-            height: 100%;
-        }
-        #navbar li a {
-            display: block;
-            padding: 6px;
-            width: 100px;
-            color: #fff;
-            text-decoration: none;
-            text-align: center;
-        }
-        #navbar ul li { float: none; }
-        #navbar li:hover { background-color: #0066ff; }
-        #navbar ul li:hover { background-color: #969696; ; }
-    </style>
 
 </head>
 
 <body>
 
-<div class="uk-container-expand uk-text-center">
-    <div class="uk-grid-large" uk-grid>
-        <div class="uk-card uk-card-body uk-background-default uk-width-4-5">
-            <h1 class="uk-card-title">Raamatupood</h1>
-        </div>
-        <div class="uk-card uk-card-body uk-card-default uk-width-1-5">
-            <form action="/login" method = "post">
-                <button class="uk-button-default uk-align-center">Log In</button>
-            </form>
-            <form action="/account" method = "post">
-                <button class="uk-button-default uk-button">Account</button>
-            </form>
-        </div>
-    </div>
 
 
+<div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://www.freewebheaders.com/wordpress/wp-content/gallery/bridges/beautiful-bridge-lights-header.jpg" uk-img>
+    <h1>Raamatupood(hiljem teeme siia ilusa bänneri)</h1>
 </div>
 
-<ul id="navbar">
-    <li><a href="/">Esileht</a></li>
-    <li><a href="/">Raamatud</a></li>
-    <li><a href="/">Bürootarbed</a></li>
-    <li><a href="contact">Kontakt</a></li>
-</ul>
+<div class="uk-background-fixed uk-height-viewport uk-width-1-1" style="background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Sky-Wallpapers-HD.jpg);">
 
-<div class="uk-grid-match ">
-    <div class="uk-container-expand uk-text-center uk-background-muted uk-text-center">
-        <h1>Kontakt</h1>
+
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="/">Esileht</a></li>
+            <li>
+                <a href="raamatpostform">Raamatud</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-nav-header">Eesti keelsed raamatud</li>
+                        <li><a href="#">Ilukirjandus</a></li>
+                        <li><a href="#">Teadus</a></li>
+                        <li><a href="#">Laste raamatud</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li class="uk-nav-header">Inglise keelsed raamatud</li>
+                        <li><a href="#">Ilukirjandus</a></li>
+                        <li><a href="#">Teadus</a></li>
+                        <li><a href="#">Laste raamatud</a></li>
+                        <li class="uk-nav-divider"></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="contact">Kontakt</a>
+            </li>
+            <li>
+                <div class="uk-navbar-item">
+
+                    <form action="/sisesta" method="post">
+                        <label for="otsing">Raamatuotsing: </label>
+                        <input class="uk-input uk-form-width-small" type="text" name="otsing" placeholder="Otsi raamatuid!" id="otsing">
+                        <button class="uk-button uk-button-default">Otsi</button>
+                    </form>
+                </div>
+
+            </li>
+        </ul>
+
     </div>
-</div>
+    <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav">
+            <li>
+                <div class="uk-navbar-item">
+                    <form action="/login" method="post">
+                        <button class="uk-button-default uk-button">Log In</button>
+                    </form>
+                    <form action="/account" method="post">
+                        <button class="uk-button-default uk-button">Account</button>
+                    </form>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
 
 
-<div class ="uk-containter-expand uk-text-center">
 
+    <hr style="height:400pt; visibility:hidden;" />
+
+
+<div class ="uk-overlay uk-overlay-default uk-text-center">
+    <h1>Kontakt</h1>
+    <hr class="uk-divider-icon">
     <p>Siin me asume:</p>
 
         <div class="center-div">
@@ -90,6 +93,12 @@
 
 
     <p>Kui tekib küsimusi, siis kirjuta meile! info@raamatupood.ee</p>
+    <hr class="uk-divider-icon">
+
+
+
+</div>
+    <hr style="height:400pt; visibility:hidden;" />
 
 </div>
 
