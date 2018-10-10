@@ -12,39 +12,75 @@
 
 
 
-    <div class="uk-container-expand uk-text-center">
-        <div class="uk-grid-large" data-uk-grid>
-            <div class="uk-card uk-card-body uk-background-default uk-width-4-5">
-                <h1 class="uk-card-title">Raamatupood</h1>
-            </div>
-            <div class="uk-card uk-card-body uk-card-default uk-width-1-5">
-                <form action="/login" method="post">
-                    <button class="uk-button-default uk-align-center">Log In</button>
-                </form>
-                <form action="/account" method="post">
-                    <button class="uk-button-default uk-button">Account</button>
-                </form>
-            </div>
-        </div>
 
 
-    </div>
+<div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://www.freewebheaders.com/wordpress/wp-content/gallery/bridges/beautiful-bridge-lights-header.jpg" uk-img>
+    <h1>Raamatupood(hiljem teeme siia ilusa bänneri)</h1>
+</div>
+
 
 
     <div class="uk-background-fixed uk-height-viewport uk-width-1-1" style="background-image: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1920x1080/151059.jpg);">
 
-        <div class="uk-grid-match ">
-            <div class="uk-container-expand uk-text-center uk-background-muted uk-text-center">
-                <i style="color:midnightblue"><a href="/raamatpostform">Siin</a> saab testida ajaxiga piltide kuvamist.</i>
 
-                <form action="/sisesta" method="post">
-                    <label for="otsing">Raamatuotsing: </label>
-                    <input placeholder="Otsi raamatuid!" type="text" name="otsing" class="uk-input uk-width-1-2" id="otsing">
-                    <button class="uk-button uk-button-default uk-width-small uk-align-center">Otsi</button>
-                </form>
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left">
+
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="/">Esileht</a></li>
+                    <li>
+                        <a href="raamatpostform">Raamatud</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-nav-header">Eesti keelsed raamatud</li>
+                                <li><a href="#">Ilukirjandus</a></li>
+                                <li><a href="#">Teadus</a></li>
+                                <li><a href="#">Laste raamatud</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li class="uk-nav-header">Inglise keelsed raamatud</li>
+                                <li><a href="#">Ilukirjandus</a></li>
+                                <li><a href="#">Teadus</a></li>
+                                <li><a href="#">Laste raamatud</a></li>
+                                <li class="uk-nav-divider"></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="contact">Kontakt</a>
+                    </li>
+                    <li>
+                        <div class="uk-navbar-item">
+
+                            <form action="/sisesta" method="post">
+                                <label for="otsing">Raamatuotsing: </label>
+                                <input class="uk-input uk-form-width-small" type="text" name="otsing" placeholder="Otsi raamatuid!" id="otsing">
+                                <button class="uk-button uk-button-default">Otsi</button>
+                            </form>
+                        </div>
+
+                    </li>
+                </ul>
 
             </div>
-        </div>
+            <div class="uk-navbar-right">
+
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <div class="uk-navbar-item">
+                            <form action="/login" method="post">
+                                <button class="uk-button-default uk-button">Log In</button>
+                            </form>
+                            <form action="/account" method="post">
+                                <button class="uk-button-default uk-button">Account</button>
+                            </form>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+
 
         <hr style="height:200pt; visibility:hidden;" />
 
@@ -54,6 +90,8 @@
             <p align="center">Siin on mingisugune tekst, mis kirlejdab võib-olla millalgi kauges ja ilusas tuelvikus seda veebilehte.</p>
             <p align="center">Aga tundub, et siin müüakse raamatuid ja muud igasugust põnevat pahna</p>
             <p align="center">Scrolli alla ja vaata seda ilu!</p>
+
+            
 
         </div>
         <hr style="height:500pt; visibility:hidden;" />
@@ -75,7 +113,7 @@
                     <H1 align="center">SIIN VÕIKS OLLA SINU REKLAAM!</H1>
 
                     <ul class="uk-thumbnav">
-                        <li class="uk-active uk-align-center"><a href=""><img src="https://techdud.com/wp-content/uploads/2018/07/Untitled-1.gif" alt=""></a></li>
+                        <li class="uk-active uk-align-center"><a href="/contact"><img src="https://techdud.com/wp-content/uploads/2018/07/Untitled-1.gif" alt=""></a></li>
                     </ul>
                     <p align="center" >
                     <button class="uk-button uk-button-text uk-text-large">Võta meiega ühendust siit!</button>
