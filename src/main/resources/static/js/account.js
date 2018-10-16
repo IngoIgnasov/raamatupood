@@ -9,6 +9,9 @@ function onSignIn(googleUser) {
 
     //Sessiooni andmete salvestamine
     sessionStorage.accountID = id;
+    sessionStorage.accountName = nimi;
+    sessionStorage.accountEmail = email;
+    sessionStorage.accountIMG = pilt;
 /*
     var id = "kala";
     var nimi = "on";
@@ -25,6 +28,7 @@ function onSignIn(googleUser) {
         url: '/addKasutaja',
         type: 'POST',
         data: jQuery.param({id: id_token, nimi: nimi,email:email,pilt:pilt}),
+        datatype : "document",
         success: function () {
             console.log("korras");
         },
