@@ -1,8 +1,10 @@
-function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
+function onSignIn() {
+    /var profile = googleUser.getBasicProfile();
 
     var name = document.getElementById("name");
     //name.innerHTML = profile.getName();
+    /*
+
     var id = profile.getId();
     var nimi = profile.getName();
     var email = profile.getEmail();
@@ -14,6 +16,11 @@ function onSignIn(googleUser) {
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 */
+
+    var id = "kala";
+    var nimi = "on";
+    var email = "sees@hotmai.com";
+    var pilt  = "pilt";
 
     console.log(id);
     console.log(nimi);
