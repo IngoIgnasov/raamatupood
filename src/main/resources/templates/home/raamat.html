@@ -27,7 +27,7 @@
                         console.log(response);
                         //loome pildi ja lisame result divi
                         var img = $('<img id="dynamic">');
-                        img.attr("width","200");
+                        img.attr("width", "200");
                         img.attr("src", "data:image/jpeg;base64," + response[0].pilt);
                         img.appendTo("#result");
                     },
@@ -58,7 +58,7 @@
                         var i;
                         for (i = 0; i < length; i++) {
                             var img = $('<img id="dynamic">');
-                            img.attr("width","200");
+                            img.attr("width", "200");
                             img.attr("src", "data:image/jpeg;base64," + response[i].pilt);
                             img.appendTo("#result");
                         }
