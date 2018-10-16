@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class KasutajaService {
     private KasutajaRepository kasutajaRepository;
-    public void kasutajaUpdate(String id,String nimi,String email,String pilt){
-        kasutajaRepository.kasutajaUpdate(id,nimi,email,pilt);
+    public void kasutajaUpdate(String nimi,String email,String pilt,String id){
+        kasutajaRepository.kasutajaUpdate(nimi,email,pilt,id);
     }
 
 }

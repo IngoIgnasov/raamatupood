@@ -4,8 +4,9 @@ import lombok.Data;
 
 @Data
 public class KasutajaEntity {
-    private String id;
     private String nimi;
     private String email;
     private String pilt;
+    private String id;
+
 }

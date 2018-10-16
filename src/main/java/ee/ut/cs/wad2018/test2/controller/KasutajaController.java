@@ -23,9 +23,9 @@ public class KasutajaController {
     }
 
     @PostMapping("/addKasutaja")
-    public ResponseEntity<Object> addKasutaja(@RequestParam("id") String id,@RequestParam("nimi") String nimi,@RequestParam("email") String email,
-                                              @RequestParam("pilt") String pilt) throws URISyntaxException {
-        kasutajaService.kasutajaUpdate(id,nimi,email,pilt);
+    public ResponseEntity<Object> addKasutaja(@RequestParam("nimi") String nimi,@RequestParam("email") String email,
+                                              @RequestParam("pilt") String pilt,@RequestParam("id") String id) throws URISyntaxException {
+        kasutajaService.kasutajaUpdate(nimi,email,pilt,id);
         //return back home
         URI uri = new URI("/");
         HttpHeaders httpHeaders = new HttpHeaders();
