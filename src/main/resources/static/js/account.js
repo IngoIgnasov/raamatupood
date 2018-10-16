@@ -12,9 +12,8 @@ function onSignIn(googleUser) {
         url: '/addKasutaja',
         type: 'POST',
         data: jQuery.param({id: profile.getId(), nimi: profile.getName(),email:profile.getEmail(),pilt:profile.getImageUrl()}),
-        dataType: "json",
-        success: function (response) {
-            console.log(response);
+        success: function () {
+            console.log("korras");
         },
         error: function () {
             alert("error");

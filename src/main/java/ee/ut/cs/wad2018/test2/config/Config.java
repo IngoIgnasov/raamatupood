@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 public class Config {
     @Bean
     //ToDo confi faili
+
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
@@ -19,7 +20,15 @@ public class Config {
         dataSource.setUsername("yalrgzppjifzak");
         dataSource.setPassword("67869f76a1498e78ea57d81191798781892e31165eaf17715f75aad022e501a8");
         return dataSource;
-
+/*
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/raamatupood");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("postgres");
+        return dataSource;
+*/
     }
 
     @Bean
