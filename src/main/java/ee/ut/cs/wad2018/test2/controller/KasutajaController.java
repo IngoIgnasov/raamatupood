@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.security.GeneralSecurityException;
 
 @RestController
 public class KasutajaController {
@@ -23,9 +25,8 @@ public class KasutajaController {
     }
 
     @PostMapping("/addKasutaja")
-    public ResponseEntity<Object> addKasutaja(@RequestParam("nimi") String nimi,@RequestParam("email") String email,
-                                              @RequestParam("pilt") String pilt,@RequestParam("id") String id) throws URISyntaxException {
-        kasutajaService.kasutajaUpdate(nimi,email,pilt,id);
+    public ResponseEntity<Object> addKasutaja(@RequestParam("token") String token) throws URISyntaxException, GeneralSecurityException, IOException {
+        kasutajaService.kasutajaUpdate(token);
         //return back home
         URI uri = new URI("/");
         HttpHeaders httpHeaders = new HttpHeaders();

@@ -1,49 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Client ID: 340061687253-aemesn4rershit8q67pemdjl8itm6la0.apps.googleusercontent.com
-Client Secret: XreL1hh5MgxYEXC24Qld-4Bn-->
+    <head>
+        <!-- Localhost: 66371768338-mf99pfhna7qifve1b46s5595204ssas8.apps.googleusercontent.com -->
+        <!-- Heroku: 340061687253-aemesn4rershit8q67pemdjl8itm6la0.apps.googleusercontent.com  -->
+        <meta charset="UTF-8">
+        <meta name="google-signin-client_id"
+              content="340061687253-aemesn4rershit8q67pemdjl8itm6la0.apps.googleusercontent.com">
+        <title>Log In</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css"/>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+        <script src="js/account.js"></script>
+    </head>
+    <body class="uk-height-viewport">
+    <div class="uk-container uk-container-small   uk-align-center uk-position-center">
+        <div class="uk-flex-column uk-flex-stretch  uk-flex uk-height-1-1 uk-flex-middle uk-padding-large">
+            <img src="https://image.freepik.com/free-icon/a-couple-of-books_318-30839.jpg" width="100"
+                 class="uk-margin-small" alt="Login icon">
 
-
-//Heroku
-//340061687253-icnajb7lqjfffe4iedm2dgv422590c51.apps.googleusercontent.com
-//9qYZVR5jmeISd3g3qwPG22yS
-<head>
-    <meta charset="UTF-8">
-    <meta name="google-signin-client_id"
-          content="340061687253-icnajb7lqjfffe4iedm2dgv422590c51.apps.googleusercontent.com">
-    <title>Log In</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css"/>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
-    <script src="js/account.js"></script>
-</head>
-<body class="uk-height-viewport">
-<div class="uk-container uk-container-small   uk-align-center uk-position-center">
-    <div class="uk-flex-column uk-flex-stretch  uk-flex uk-height-1-1 uk-flex-middle uk-padding-large">
-        <img src="https://image.freepik.com/free-icon/a-couple-of-books_318-30839.jpg" width="100"
-             class="uk-margin-small" alt="Login icon">
-
-        <form class="uk-form uk-card-default uk-card uk-card-body">
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        </form>
+            <form class="uk-form uk-card-default uk-card uk-card-body">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            </form>
+        </div>
     </div>
-</div>
+
+    <a href="#" onclick="signOut();">Sign out</a>
+    <script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
 
 
-<input type = "button" value="tere" onclick="onSignIn()"/>
-
-<a href="#" onclick="signOut();">Sign out</a>
-<script>
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
-        });
-    }
-</script>
-
-
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-</body>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </body>
 </html>
