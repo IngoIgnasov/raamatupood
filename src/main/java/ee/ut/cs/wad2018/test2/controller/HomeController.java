@@ -15,14 +15,10 @@ public class HomeController {
     }
 
 
-    //@PostMapping("/test")
-
-
     @PostMapping("/login")
     public String getLoginPage() {
         return "home/login.html";
     }
-
 
     @PostMapping("/account")
     public String getAccountPage() {
@@ -38,6 +34,8 @@ public class HomeController {
     public String getRaamatPage() {
         return "home/raamat.html";
     }
+
+
 }
 
 

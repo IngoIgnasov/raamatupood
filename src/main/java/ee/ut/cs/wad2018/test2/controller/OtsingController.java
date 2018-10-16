@@ -22,11 +22,12 @@ public class OtsingController {
     }
 
     @GetMapping("/otsing")
-    public List<OtsingEntity> getOtsingudByID(@RequestParam("id") int id){
+    public List<OtsingEntity> getOtsingudByID(@RequestParam("id") int id) {
         return otsingService.getOtsingudByID(id);
     }
+
     @PostMapping("/sisesta")
-    public ResponseEntity<Object> sisesta(@RequestParam("otsing")String otsing) throws URISyntaxException{
+    public ResponseEntity<Object> sisesta(@RequestParam("otsing") String otsing) throws URISyntaxException {
         otsingService.otsingUpdate(otsing);
         //return back home
         URI uri = new URI("/");
@@ -34,5 +35,4 @@ public class OtsingController {
         httpHeaders.setLocation(uri);
         return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
     }
-
 }

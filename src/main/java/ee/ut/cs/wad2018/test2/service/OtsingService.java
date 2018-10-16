@@ -19,6 +19,7 @@ public class OtsingService {
     public List<OtsingEntity> getOtsingudByID(int id) {
         return otsingRepository.getOtsingByID(id);
     }
+
     public void otsingUpdate(String otsing){
         otsingRepository.otsingUpdate(otsing);
     }
