@@ -24,13 +24,11 @@ public class KasutajaController {
     }
 
     @PostMapping("/addKasutaja")
-    public ResponseEntity<Object> addKasutaja(@RequestParam("nimi") String nimi,@RequestParam("email") String email,
-                                              @RequestParam("pilt") String pilt,@RequestParam("id") String id) throws URISyntaxException {
-        kasutajaService.kasutajaUpdate(nimi,email,pilt,id);
+    public String addKasutaja(@RequestParam("nimi") String nimi, @RequestParam("email") String email,
+                              @RequestParam("pilt") String pilt, @RequestParam("id") String id) throws URISyntaxException {
+        kasutajaService.kasutajaUpdate(nimi, email, pilt, id);
         //return back home
-        URI uri = new URI("/");
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setLocation(uri);
-        return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
+        return "redirect:" + "/";
+
     }
 }
