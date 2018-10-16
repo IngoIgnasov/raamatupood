@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +16,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.GeneralSecurityException;
 
-@RestController
+@Controller
 public class KasutajaController {
     private KasutajaService kasutajaService;
 
@@ -28,9 +29,7 @@ public class KasutajaController {
     public ResponseEntity<Object> addKasutaja(@RequestParam("token") String token) throws URISyntaxException, GeneralSecurityException, IOException {
         kasutajaService.kasutajaUpdate(token);
         //return back home
-        URI uri = new URI("/");
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setLocation(uri);
-        return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
+        return "redirect:" + "/";
+
     }
 }
