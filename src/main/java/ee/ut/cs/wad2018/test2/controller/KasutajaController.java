@@ -1,6 +1,8 @@
 package ee.ut.cs.wad2018.test2.controller;
 
 import ee.ut.cs.wad2018.test2.service.KasutajaService;
+import ee.ut.cs.wad2018.test2.service.OtsingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,11 @@ import java.net.URISyntaxException;
 @RestController
 public class KasutajaController {
     private KasutajaService kasutajaService;
+
+    @Autowired
+    public KasutajaController(KasutajaService kasutajaService) {
+        this.kasutajaService = kasutajaService;
+    }
 
     @PostMapping("/addKasutaja")
     public ResponseEntity<Object> addKasutaja(@RequestParam("id") Integer id,@RequestParam("nimi") String nimi,@RequestParam("email") String email,

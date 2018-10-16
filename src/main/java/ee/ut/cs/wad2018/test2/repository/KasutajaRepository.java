@@ -7,7 +7,7 @@ public class KasutajaRepository {
     private JdbcTemplate jdbcTemplate;
 
     @Transactional
-    public int kasutajaUpdate(Integer id,String nimi,String pilt,String email) {
-        return jdbcTemplate.update("INSERT INTO kasutajad(otsing) VALUES(?,?,?,?)", id,nimi,pilt,email);
+    public int kasutajaUpdate(Integer id,String nimi,String email,String pilt) {
+        return jdbcTemplate.update("INSERT INTO kasutajad(otsing) VALUES(?,?,?,?)", id,nimi,email,pilt);
     }
 }
