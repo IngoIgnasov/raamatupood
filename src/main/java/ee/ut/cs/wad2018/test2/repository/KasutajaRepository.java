@@ -8,6 +8,6 @@ public class KasutajaRepository {
 
     @Transactional
     public int kasutajaUpdate(String nimi,String email,String pilt,String id) {
-        return jdbcTemplate.update("INSERT INTO kasutajad(otsing) VALUES(?,?,?,?)", nimi,email,pilt,id);
+        return jdbcTemplate.update("INSERT INTO kasutajad(nimi,email,pilt,id) VALUES(?,?,?,?)", nimi,email,pilt,id);
     }
 }
