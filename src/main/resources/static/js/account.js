@@ -31,11 +31,14 @@ function onSignIn(googleUser) {
         datatype : "document",
         success: function () {
             console.log("korras");
+            window.location.href = "/";
         },
         error: function () {
-            alert("error");
+            alert("Error while sending data");
             $("#result").html('Some kind of error :( !');
+            window.location.href = "/";
         }
+
     });
 }
 
