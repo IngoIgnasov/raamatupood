@@ -26,10 +26,9 @@ public class KasutajaController {
     }
 
     @PostMapping("/addKasutaja")
-    public ResponseEntity<Object> addKasutaja(@RequestParam("token") String token) throws URISyntaxException, GeneralSecurityException, IOException {
+    public void addKasutaja(@RequestParam("token") String token) throws URISyntaxException, GeneralSecurityException, IOException {
         kasutajaService.kasutajaUpdate(token);
         //return back home
-        return "redirect:" + "/";
-
+        //return "redirect:" + "/";
     }
 }
