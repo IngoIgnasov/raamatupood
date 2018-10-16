@@ -29,7 +29,8 @@ public class KasutajaService {
 
     public void kasutajaUpdate(String token) throws IOException, GeneralSecurityException {
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(new NetHttpTransport(), new JacksonFactory())
-                //66371768338-mf99pfhna7qifve1b46s5595204ssas8.apps.googleusercontent.com
+                //LocalHost: 66371768338-mf99pfhna7qifve1b46s5595204ssas8.apps.googleusercontent.com
+                //Heroku: 340061687253-aemesn4rershit8q67pemdjl8itm6la0.apps.googleusercontent.com
                 .setAudience(Collections.singletonList("340061687253-aemesn4rershit8q67pemdjl8itm6la0.apps.googleusercontent.com"))
                 .build();
 
