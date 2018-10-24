@@ -14,6 +14,11 @@ public class HomeController {
         return "home/index.html";
     }
 
+    @PostMapping("/")
+    public String getTestPageBack() {
+        return "home/index.html";
+    }
+
 
     @PostMapping("/login")
     public String getLoginPage() {
