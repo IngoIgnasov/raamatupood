@@ -60,6 +60,7 @@ public class DataRepository {
         raamatEntity.setLisamise_aeg(rs.getTimestamp("lisamise_aeg"));
         raamatEntity.setHind(rs.getInt("hind"));
         raamatEntity.setPilt(rs.getBytes("pilt"));
+        raamatEntity.setKogus(rs.getInt("kogus"));
         return raamatEntity;
     }
 }

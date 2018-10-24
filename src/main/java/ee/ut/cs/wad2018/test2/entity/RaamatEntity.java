@@ -15,4 +15,5 @@ public class RaamatEntity {
     private Timestamp lisamise_aeg;
     private int hind;
     private byte[] pilt;
+    private int kogus;
 }

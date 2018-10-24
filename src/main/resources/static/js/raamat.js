@@ -4,7 +4,6 @@ $(document).ready(function () {
         evt.preventDefault();
         //puhastan div
         $("#result").html('');
-
         //võtan formidelt andmed
         var title = $("#title").val();
         var author = $("#author").val();
@@ -23,6 +22,11 @@ $(document).ready(function () {
                 img.attr("width", "200");
                 img.attr("src", "data:image/jpeg;base64," + response[0].pilt);
                 img.appendTo("#result");
+
+                //lisan urlile ankru
+                window.location = '#'+response[0].pealkiri;
+                //salvestan andmed kliendi arvutisse, ajaxi viite jaoks
+                localStorage.bookIMGsrc = "data:image/jpeg;base64," + response[0].pilt
             },
             error: function () {
                 alert("error");
@@ -46,7 +50,7 @@ $(document).ready(function () {
 
                 console.log(response);
 
-                //teeme for lüüpi JSON-i paele, loome iga raamatu kohta uue img elemendi ja lisame selle div-i
+                //teeme for loopi JSON-i paele, loome iga raamatu kohta uue img elemendi ja lisame selle div-i
                 var length = response.length;
                 var i;
                 for (i = 0; i < length; i++) {
