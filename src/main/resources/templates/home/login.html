@@ -9,7 +9,9 @@
     <title>Log In</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css"/>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
+    <!-- using CDN here-->
+    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.js">\x3C/script>')</script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
     <script src="js/account.js"></script>
 </head>
@@ -19,17 +21,17 @@
         <img src="https://image.freepik.com/free-icon/a-couple-of-books_318-30839.jpg" width="100"
              class="uk-margin-small" alt="Login icon">
 
-            <div class="uk-form uk-card-default uk-card uk-card-body uk-align-center uk-padding-large">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="uk-form uk-card-default uk-card uk-card-body uk-align-center uk-padding-large">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-                <form class="uk-margin-medium" action="/" method="post">
-                    <button class="uk-button uk-button-default uk-align-center ">Tagasi</button>
-                </form>
-            </div>
-
-
+            <form class="uk-margin-medium" action="/" method="post">
+                <button class="uk-button uk-button-default uk-align-center ">Tagasi</button>
+            </form>
         </div>
+
+
     </div>
+</div>
 </div>
 
 <a href="#" onclick="signOut();">Sign out</a>
