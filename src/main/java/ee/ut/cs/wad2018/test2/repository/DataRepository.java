@@ -1,6 +1,7 @@
 package ee.ut.cs.wad2018.test2.repository;
 
 import ee.ut.cs.wad2018.test2.entity.ActorEntity;
+import ee.ut.cs.wad2018.test2.entity.BookAmntByCtgryResultentity;
 import ee.ut.cs.wad2018.test2.entity.RaamatEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -39,6 +40,17 @@ public class DataRepository {
             return mapValuesFromDBtoRaamarEntity(rs);
         }, name, author);
 
+    }
+
+    public List<BookAmntByCtgryResultentity> getAmountByCategory() {
+        String sql = "select kategooria,COUNT(*) as arv from raamatud_2_kategooriad group by kategooria";
+
+        return jdbcTemplate.query(sql, (rs, rowNum) -> {
+            BookAmntByCtgryResultentity bookAmntByCtgryResultentity = new BookAmntByCtgryResultentity();
+            bookAmntByCtgryResultentity.setKategooria(rs.getString("kategooria"));
+            bookAmntByCtgryResultentity.setArv(rs.getInt("arv"));
+            return bookAmntByCtgryResultentity;
+        });
     }
 
     public List<RaamatEntity> getAllBooks() {

@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $('form').submit(function (evt) {
         evt.preventDefault();
@@ -36,6 +35,7 @@ $(document).ready(function () {
         $(this).trigger("reset");
 
     });
+
     //nupu vajutusel kuvan kõik raamatud
     $('#btn').click(function () {
 

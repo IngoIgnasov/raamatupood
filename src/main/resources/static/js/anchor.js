@@ -1,4 +1,3 @@
-
 $(window).load(function(){
 var anchor = document.location;
 anchor = String(anchor);
