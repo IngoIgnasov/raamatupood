@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+  <!--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSl0ZShUO_nTiVEu1I8WOtjT9wXFbBuAU"></script>-->
+
 
 </head>
 
@@ -30,18 +32,18 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Raamatupood</a>
+                <a class="navbar-brand" href="/">Raamatupood</a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Esileht</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="raamatpostform">Raamatud <span class="caret"></span></a>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/raamatpostform">Raamatud <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Eesti keelsed</a></li>
-                        <li><a href="#">Inglise keelsed</a></li>
-                        <li><a href="#">Veel mingi valik</a></li>
+                        <li><a href="/raamatpostform">Eesti keelsed</a></li>
+                        <li><a href="/raamatpostform">Inglise keelsed</a></li>
+                        <li><a href="/raamatpostform">Veel mingi valik</a></li>
                     </ul>
                 </li>
-                <li><a href="contact">Kontakt</a></li>
+                <li><a href="/contact">Kontakt</a></li>
             </ul>
             <form class="navbar-form navbar-left" action="/postraamat"> <!--- hiljem paneme selle tööle, hetkel kasutame otselinki raamatule klikkides-->
                 <div class="form-group">
@@ -50,8 +52,8 @@
                 <button type="submit" class="btn btn-default">Otsi</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="account"><span class="glyphicon glyphicon-user"></span>Kasutaja</a></li>
-                <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                <li><a href="/account"><span class="glyphicon glyphicon-user"></span>Kasutaja</a></li>
+                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
             </ul>
 
         </div>
@@ -67,12 +69,16 @@
     <p>Siin me asume:</p>
 
         <div class="center-div">
+
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2091.8983410988703!2d26.712484615766623!3d58.37825129395191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb36e1900bfbf1%3A0x5a26b1670e99e751!2sJuhan+Liivi+2%2C+50409+Tartu!5e0!3m2!1set!2see!4v1538467002659" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
 
 
     <p>Kui tekib küsimusi, siis kirjuta meile! info@raamatupood.ee</p>
     <hr class="uk-divider-icon">
+
+    <div id="map" class="map"></div>
+
 
 
 
