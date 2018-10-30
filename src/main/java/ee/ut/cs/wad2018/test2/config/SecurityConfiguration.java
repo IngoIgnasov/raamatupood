@@ -20,7 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/home").authenticated()
                 .antMatchers("/**").permitAll()
                 .and()
-                .formLogin().loginPage("home");
+                .formLogin().loginPage("/home");
     }
 
 }
