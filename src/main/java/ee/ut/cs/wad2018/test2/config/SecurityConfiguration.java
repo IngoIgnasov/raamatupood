@@ -10,12 +10,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
 
-        //disable cors() and csrf() for localhost development
+        // disable cors() and csrf() for localhost development
         http.cors().and().csrf().disable();
 
-        //by default allow request to any URL
-        http.authorizeRequests().antMatchers("/**").permitAll();
+        // by default allow requests to any URL
+        http.authorizeRequests()
+                .antMatchers("/home").authenticated()
+                .antMatchers("/**").permitAll()
+                .and()
+                .formLogin().loginPage("home");
     }
+
 }

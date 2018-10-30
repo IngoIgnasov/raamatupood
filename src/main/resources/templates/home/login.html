@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Localhost: 66371768338-mf99pfhna7qifve1b46s5595204ssas8.apps.googleusercontent.com -->
-    <!-- Heroku: 340061687253-icnajb7lqjfffe4iedm2dgv422590c51.apps.googleusercontent.com  -->
-    <meta charset="UTF-8">
-    <meta name="google-signin-client_id"
-          content="340061687253-icnajb7lqjfffe4iedm2dgv422590c51.apps.googleusercontent.com">
-    <title>Log In</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css"/>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
-    <script src="js/account.js"></script>
-</head>
-<body class="uk-height-viewport">
-<div class="uk-container uk-container-small   uk-align-center uk-position-center">
-    <div class="uk-flex-column uk-flex-stretch  uk-flex uk-height-1-1 uk-flex-middle uk-padding-large">
-        <img src="https://image.freepik.com/free-icon/a-couple-of-books_318-30839.jpg" width="100"
-             class="uk-margin-small" alt="Login icon">
+    <head>
+        <!-- Localhost: 66371768338-mf99pfhna7qifve1b46s5595204ssas8.apps.googleusercontent.com -->
+        <!-- Heroku: 340061687253-icnajb7lqjfffe4iedm2dgv422590c51.apps.googleusercontent.com  -->
+        <meta charset="UTF-8">
+        <meta name="google-signin-client_id"
+              content="340061687253-icnajb7lqjfffe4iedm2dgv422590c51.apps.googleusercontent.com">
+        <title>Log In</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css"/>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+        <script src="js/account.js"></script>
+    </head>
 
-        <div class="uk-form uk-card-default uk-card uk-card-body uk-align-center uk-padding-large">
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <body class="uk-height-viewport" style="background-image: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1920x1080/151059.jpg);">
+    <div class="uk-container uk-container-small   uk-align-center uk-position-center ">
+        <div class="uk-flex-column uk-flex-stretch  uk-flex uk-height-1-1 uk-flex-middle uk-padding-large">
 
-            <form class="uk-margin-medium" action="/" method="post">
-                <button class="uk-button uk-button-default uk-align-center ">Tagasi</button>
-            </form>
+            <div class="uk-card-default uk-card-large uk-card-body uk-align-center uk-overlay uk-overlay-default">
+
+                <div class="uk-flex uk-flex-column uk-width-1-1 uk-padding-small uk-margin-small ">
+                    <div class="g-signin2 uk-padding-remove uk-align-center uk-background-muted" data-onsuccess="onSignIn"></div>
+
+                    <div class="uk-inline">
+                        <button class="uk-button uk-button-default uk-background-muted uk-align-center">
+                            <span class="uk-icon uk-icon-image" type="button" style="background-image: url(https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/2c/a9/f7/2ca9f727-f29e-ec64-f640-7e2b0b8f8a7c/AppIcon-1x_U007emarketing-85-220-6.png/246x0w.jpg);"></span>
+                            SMART ID
+                        </button>
+                        <div uk-dropdown="mode: click; pos: center" class="uk-padding-remove">
+                            <div id="smart-id-login-container" class="uk-card uk-card-default uk-card-body uk-card-large">
+                                <h1 class="uk-heading-divider" id="main-text">Logi sisse</h1>
+                                <form method="post" class="uk-form-width-medium">
+                                    <input type="text" class="uk-input uk-margin-small" id="countryCode" name="countryCode" placeholder="EE">
+                                    <input type="email" class="uk-input uk-margin-small" id="nationalIdentityNumber" name="nationalIdentityNumber"
+                                           placeholder="XXXXXXXXXXX">
+
+                                    <p><button type="submit" class="uk-button-default uk-button uk-align-center" id="smartIdButton">Start Smart-ID</button></p>
+                                </form>
+                                <div id="smart-id-verification-code-container" class="uk-align-center">
+                                    <h1 class="uk-text-center" id="verification-code-text">XXXX</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="uk-margin-small" action="/" method="post">
+                        <button class="uk-button-default uk-button uk-align-center uk-background-muted">Tagasi</button>
+                    </form>
+                </div>
+
+
+
+
+
+
+            </div>
+
+
         </div>
-
-
     </div>
-</div>
-</div>
-
-<a href="#" onclick="signOut();">Sign out</a>
-<script>
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
-        });
-    }
-</script>
 
 
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-</body>
+
+
+    <a href="#" onclick="signOut();">Sign out</a>
+    <script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="js/smartId.js"></script>
+    </body>
 </html>
