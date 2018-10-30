@@ -14,14 +14,19 @@ public class HomeController {
         return "home/index.html";
     }
 
-    @PostMapping("/")
+    @PostMapping(path = "/")
     public String getTestPageBack() {
         return "home/index.html";
     }
 
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @GetMapping("/login")
     public String getLoginPage() {
+        return "home/login.html";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String postLoginPage() {
         return "home/login.html";
     }
 
