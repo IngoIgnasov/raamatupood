@@ -20,12 +20,12 @@ public class HomeController {
     }
 
 
-    @PostMapping("/login")
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String getLoginPage() {
         return "home/login.html";
     }
 
-    @PostMapping("/account")
+    @RequestMapping(value = "/account", method = RequestMethod.GET)
     public String getAccountPage() {
         return "home/account.html";
     }
