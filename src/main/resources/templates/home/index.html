@@ -17,6 +17,8 @@
 <body>
 
 
+
+
 <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" style="background-image: url(https://www.freewebheaders.com/wordpress/wp-content/gallery/bridges/beautiful-bridge-lights-header.jpg);">
     <h1>Raamatupood(hiljem teeme siia ilusa bänneri)</h1>
 </div>
@@ -50,17 +52,22 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                        <div class="btn-group">
-                            <form action="/login" method="post">
-                                <button class="btn btn-primary" type="submit" name="loginButton" value="loginButton">Log in</button>
-                            </form>
 
-                            <form action="/account">
-                                <button class="btn btn-primary" name="accountButton">Account</button>
-                            </form>
+                    <div class="btn-group">
+                    <form action="/account">
+                        <button class="btn btn-info" name="accountButton"> <span class="glyphicon glyphicon-user"></span> Account</button>
+                    </form>
+                    </div>
 
-                        </div>
+                    <div class="btn-group">
+                    <form action="/login" method="post">
+                        <button class="btn btn-primary" type="submit" name="loginButton" value="loginButton"> <span class="glyphicon glyphicon-log-in"> </span> Sign in</button>
+                    </form>
+                    </div>
 
+                    <div class="btn-group">
+                        <button class="btn btn-primary"  name="logOutButtton" onclick="signOut()">  <span class="glyphicon glyphicon-log-out"> </span> Sign Out</button>
+                    </div>
 
                 </ul>
 

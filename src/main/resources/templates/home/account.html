@@ -55,11 +55,22 @@
 
             <ul class="nav navbar-nav navbar-right">
 
+
                 <div class="btn-group">
-                    <a href="/login"class="btn btn-primary">Log in</a>
-                    <a href="/account" class="btn btn-primary">Account</a>
+                    <form action="/account">
+                        <button class="btn btn-info" name="accountButton"> <span class="glyphicon glyphicon-user"></span> Account</button>
+                    </form>
                 </div>
 
+                <div class="btn-group">
+                    <form action="/login" method="post">
+                        <button class="btn btn-primary" type="submit" name="loginButton" value="loginButton"> <span class="glyphicon glyphicon-log-in"> </span> Sign in</button>
+                    </form>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary"  name="logOutButtton" onclick="signOut()">  <span class="glyphicon glyphicon-log-out"> </span> Sign Out</button>
+                </div>
 
             </ul>
 
