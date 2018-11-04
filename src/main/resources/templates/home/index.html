@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+    <script src="js/main.js"></script>
+
 
 </head>
 <body>
@@ -33,10 +35,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/">Esileht</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/raamatpostform">Raamatud <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/raamatpostform">Eesti keelsed</a></li>
-                            <li><a href="/raamatpostform">Inglise keelsed</a></li>
-                            <li><a href="/raamatpostform">Veel mingi valik</a></li>
+                        <ul id="category" class="dropdown-menu">
                         </ul>
                     </li>
                     <li><a href="/contact">Kontakt</a></li>
