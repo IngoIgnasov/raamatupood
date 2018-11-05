@@ -68,9 +68,10 @@ $(window).load(function () {
                     img.attr("width", "200");
                     img.attr("src", "data:image/jpeg;base64," + response[i].pilt)
                     img.appendTo(div2);
-                    $(div3).append($('<p></p><b style="font-size:20px">"' + response[i].pealkiri + '"</b></p>'));
+                    $(div3).append($('<p></p><b style="font-size:30px">"' + response[i].pealkiri + '"</b></p>'));
                     $(div3).append($('<p>"' + response[i].autor + '"</p>'));
                     $(div3).append($('<p>10€</p>'));
+                    $(div3).append($('<p>"' + response[i].lk + '" lk</p>'));
                     $(div3).append($('<p>Laos: "' + response[i].kogus + '"</p>'));
 
                     div3.appendTo(div2);
