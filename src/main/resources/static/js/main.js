@@ -8,11 +8,9 @@ $(window).on('load', function () {
             var length = response.length;
             var i;
             for (i = 0; i < length; i++) {
-
                 var category = response[i].kategooria;
                 var amount = response[i].arv;
-                $("#category").append($("<li>").append($('<a>').attr('href', '/raamatpostform').text(category +"    - "+amount)));
-
+                $("#licategory").append($("<li>").append($('<a id="'+category+'" onclick=location.reload() >').attr('href', '/raamatMainPage#'+category).text(category + "    - " + amount)));
             }
         },
         error: function () {
@@ -20,6 +18,5 @@ $(window).on('load', function () {
             $("#result").html('Some kind of error :( !');
         }
     });
-
 })
 

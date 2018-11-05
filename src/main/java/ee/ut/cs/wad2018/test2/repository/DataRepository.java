@@ -53,6 +53,14 @@ public class DataRepository {
         });
     }
 
+    public List<RaamatEntity> getRaamatudByCategory(String category){
+        String sql = "select * from raamatud,kategooriad,raamatud_2_kategooriad where kategooria = ? and pealkiri = raamatunimi and autor = raamatuautor and nimetus = kategooria";
+
+        return jdbcTemplate.query(sql, (rs, rowNum) -> {
+            return mapValuesFromDBtoRaamarEntity(rs);
+        },category);
+    }
+
     public List<RaamatEntity> getAllBooks() {
         String sql = "select * from raamatud";
 

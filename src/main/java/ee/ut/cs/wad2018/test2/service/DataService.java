@@ -19,19 +19,19 @@ public class DataService {
         this.dataRepository = dataRepository;
     }
 
-    public List<ActorEntity> getActorsByName(String firstName, String lastName) {
-        return dataRepository.getActorByName(firstName, lastName);
-    }
-
     public List<RaamatEntity> getRaamatudByName(String name, String author) {
         return dataRepository.getRaamatByNameAndAuthor(name, author);
     }
 
     public List<RaamatEntity> getAllRaamatud() {
-
         return dataRepository.getAllBooks();
     }
-    public List<BookAmntByCtgryResultentity> getAmountByCategory(){
+
+    public List<RaamatEntity> getRaamatudByCategory(String category) {
+        return dataRepository.getRaamatudByCategory(category);
+    }
+
+    public List<BookAmntByCtgryResultentity> getAmountByCategory() {
         return dataRepository.getAmountByCategory();
     }
 }

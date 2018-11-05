@@ -32,9 +32,14 @@ public class DataController {
     public List<RaamatEntity> getAllBooks() {
         return dataService.getAllRaamatud();
     }
+
     @PostMapping("/byCategory")
-    public List<BookAmntByCtgryResultentity> getAmountByCategory(){
+    public List<BookAmntByCtgryResultentity> getAmountByCategory() {
         return dataService.getAmountByCategory();
     }
 
+    @PostMapping("/bookByCategory")
+    public List<RaamatEntity> getRaamatudByCategory(@RequestParam("category") String category) {
+        return dataService.getRaamatudByCategory(category);
+    }
 }

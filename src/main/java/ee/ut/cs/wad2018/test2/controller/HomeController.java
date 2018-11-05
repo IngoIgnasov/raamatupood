@@ -44,8 +44,8 @@ public class HomeController {
     public String getRaamatPage() {
         return "home/raamat.html";
     }
-
-
+    @GetMapping("/raamatMainPage")
+    public String getRaamatMainPage(){return "home/raamatMain.html";}
 }
 
 

@@ -1,8 +1,4 @@
 var stompClient = null;
-
-
-
-
 console.log("ma olen siin");
 
 function connect() {
