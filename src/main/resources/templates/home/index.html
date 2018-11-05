@@ -8,17 +8,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="js/webSocket.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
-
 </head>
 <body>
 
 
 <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" style="background-image: url(https://www.freewebheaders.com/wordpress/wp-content/gallery/bridges/beautiful-bridge-lights-header.jpg);">
     <h1>Raamatupood(hiljem teeme siia ilusa bänneri)</h1>
+</div>
+
+
+
+
+
+<div id="book" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+        <button class="uk-modal-close-outside" type="button" uk-close></button>
+        <img src="https://wallpaperstudio10.com/static/wpdb/wallpapers/1920x1080/151059.jpg" alt="">
+    </div>
 </div>
 
 
@@ -48,15 +61,18 @@
                     <button type="submit" class="btn btn-default">Otsi</button>
                 </form>
 
+
+
                 <ul class="nav navbar-nav navbar-right">
+
 
                         <div class="btn-group">
                             <form action="/login" method="post">
-                                <button class="btn btn-primary" type="submit" name="loginButton" value="loginButton">Log in</button>
+                                <button class="btn btn-primary" type="submit" >Log in</button>
                             </form>
 
-                            <form action="/account">
-                                <button class="btn btn-primary" name="accountButton">Account</button>
+                            <form action="/account" method="post">
+                                <button class="btn btn-primary">Account</button>
                             </form>
 
                         </div>
