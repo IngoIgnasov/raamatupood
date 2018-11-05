@@ -9,20 +9,90 @@
     <script src="js/anchor.js"></script>
     <script src="js/testFunctions.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+
 
 
 </head>
 
-<body>
+<body style="background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Sky-Wallpapers-HD.jpg);">
 
-<form action="/postraamat" method="post" id="form" name="form">
-    <input type="text" name="title" placeholder="Pealkiri..." id="title">
-    <input type="text" name="author" placeholder="Autor..." id="author">
-    <input name=submit type="submit" value="Search">
-</form>
-<input id="btn" type="button" value="Kuva kõik raamatud andmebaasist"/>
-<div id="result"></div>
-<input id="testbtn" type="button" value="Testi raamatute arvu kategooriate järgi"/>
+
+<div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+     style="background-image: url(https://www.freewebheaders.com/wordpress/wp-content/gallery/bridges/beautiful-bridge-lights-header.jpg);">
+    <h1>Raamatupood(hiljem teeme siia ilusa bänneri)</h1>
+</div>
+
+
+<div class="uk-background-fixed uk-height-viewport uk-width-1-1">
+
+
+    <!-- NAVBAR START-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Raamatupood</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Esileht</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/raamatpostform">Raamatud <span class="caret"></span></a>
+                    <ul id="category" class="dropdown-menu">
+                    </ul>
+                </li>
+                <li><a href="/contact">Kontakt</a></li>
+            </ul>
+
+            <form class="navbar-form navbar-left" action="/raamatpostform"> <!--- hiljem paneme selle tööle, hetkel kasutame otselinki raamatule klikkides-->
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Otsi raamatuid">
+                </div>
+                <button type="submit" class="btn btn-default">Otsi</button>
+            </form>
+
+
+            <div class="navbar-form navbar-right"> <!--parempoolsed nupud -->
+
+                <div class="btn-group">
+                    <button class="btn btn-info" onclick="window.location.href='/account'" name="accountButton"> <span class="glyphicon glyphicon-user"></span> Account</button>
+
+                    <button class="btn btn-primary" type="submit" onclick="window.location.href='/login'" name="loginButton" value="loginButton"> <span class="glyphicon glyphicon-log-in"> </span> Sign in</button>
+
+                    <button class="btn btn-primary"  name="logOutButtton" onclick="signOut()">  <span class="glyphicon glyphicon-log-out"> </span> Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- NAVBAR END-->
+
+    <hr style="height:100pt; visibility:hidden;"/>
+
+
+    <div class="uk-container-expand uk-container">
+        <div class=" uk-card uk-card-body uk-card-default uk-align-center">
+            <!-- RAAMAT ALGAB-->
+
+            <form action="/postraamat" method="post" id="form" name="form">
+                <input type="text" name="title" placeholder="Pealkiri..." id="title">
+                <input type="text" name="author" placeholder="Autor..." id="author">
+                <input name=submit type="submit" value="Search">
+            </form>
+            <input id="btn" type="button" value="Kuva kõik raamatud andmebaasist"/>
+            <div id="result"></div>
+            <input id="testbtn" type="button" value="Testi raamatute arvu kategooriate järgi"/>
+
+
+            <!-- RAAMAT Lõppeb-->
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
 </html>
