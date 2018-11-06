@@ -45,6 +45,7 @@
                 </li>
                 <li><a href="/contact">Kontakt</a></li>
             </ul>
+
             <form class="navbar-form navbar-left" action="/raamatpostform"> <!--- hiljem paneme selle tööle, hetkel kasutame otselinki raamatule klikkides-->
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Otsi raamatuid">
@@ -52,25 +53,17 @@
                 <button type="submit" class="btn btn-default">Otsi</button>
             </form>
 
-            <ul class="nav navbar-nav navbar-right">
 
-
-                <div class="btn-group">
-                    <form action="/account">
-                        <button class="btn btn-info" name="accountButton"> <span class="glyphicon glyphicon-user"></span> Account</button>
-                    </form>
-                </div>
+            <div class="navbar-form navbar-right"> <!--parempoolsed nupud -->
 
                 <div class="btn-group">
-                    <form action="/login" method="post">
-                        <button class="btn btn-primary" type="submit" name="loginButton" value="loginButton"> <span class="glyphicon glyphicon-log-in"> </span> Sign in</button>
-                    </form>
-                </div>
+                    <button class="btn btn-info" onclick="window.location.href='/account'" name="accountButton"> <span class="glyphicon glyphicon-user"></span> Account</button>
 
-                <div class="btn-group">
+                    <button class="btn btn-primary" type="submit" onclick="window.location.href='/login'" name="loginButton" value="loginButton"> <span class="glyphicon glyphicon-log-in"> </span> Sign in</button>
+
                     <button class="btn btn-primary"  name="logOutButtton" onclick="signOut()">  <span class="glyphicon glyphicon-log-out"> </span> Sign Out</button>
                 </div>
-            </ul>
+            </div>
         </div>
     </nav>
     <!-- NAVBAR END-->
