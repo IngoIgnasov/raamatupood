@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>raamatupost test</title>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://s3.eu-west-3.amazonaws.com/raamatupoodbucket/raamat.js"></script>
+    <!-- <script src="https://s3.eu-west-3.amazonaws.com/raamatupoodbucket/raamat.js"></script> -->
     <script>window.jQuery || document.write('<script src="js/raamat.js">\x3C/script>')</script>
     <script src="js/anchor.js"></script>
     <script src="js/testFunctions.js"></script>
@@ -13,10 +13,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
-
 
 
 </head>
@@ -41,14 +40,16 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Esileht</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/raamatpostform">Raamatud <span class="caret"></span></a>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/raamatpostform">Raamatud
+                    <span class="caret"></span></a>
                     <ul id="category" class="dropdown-menu">
                     </ul>
                 </li>
                 <li><a href="/contact">Kontakt</a></li>
             </ul>
 
-            <form class="navbar-form navbar-left" action="/raamatpostform"> <!--- hiljem paneme selle tööle, hetkel kasutame otselinki raamatule klikkides-->
+            <form class="navbar-form navbar-left" action="/raamatpostform">
+                <!--- hiljem paneme selle tööle, hetkel kasutame otselinki raamatule klikkides-->
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Otsi raamatuid">
                 </div>
@@ -59,11 +60,18 @@
             <div class="navbar-form navbar-right"> <!--parempoolsed nupud -->
 
                 <div class="btn-group">
-                    <button class="btn btn-info" onclick="window.location.href='/account'" name="accountButton"> <span class="glyphicon glyphicon-user"></span> Account</button>
+                    <button class="btn btn-info" onclick="window.location.href='/account'" name="accountButton"><span
+                            class="glyphicon glyphicon-user"></span> Account
+                    </button>
 
-                    <button class="btn btn-primary" type="submit" onclick="window.location.href='/login'" name="loginButton" value="loginButton"> <span class="glyphicon glyphicon-log-in"> </span> Sign in</button>
+                    <button class="btn btn-primary" type="submit" onclick="window.location.href='/login'"
+                            name="loginButton" value="loginButton"><span class="glyphicon glyphicon-log-in"> </span>
+                        Sign in
+                    </button>
 
-                    <button class="btn btn-primary"  name="logOutButtton" onclick="signOut()">  <span class="glyphicon glyphicon-log-out"> </span> Sign Out</button>
+                    <button class="btn btn-primary" name="logOutButtton" onclick="signOut()"><span
+                            class="glyphicon glyphicon-log-out"> </span> Sign Out
+                    </button>
                 </div>
             </div>
         </div>
@@ -88,10 +96,9 @@
 
 
             <!-- RAAMAT Lõppeb-->
-            </div>
         </div>
     </div>
-
+</div>
 
 
 </body>

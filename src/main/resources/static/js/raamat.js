@@ -38,8 +38,9 @@ $(document).ready(function () {
 
     //nupu vajutusel kuvan kõik raamatud
     $('#btn').click(function () {
-        if (!(navigator.onLine))
+        if (navigator.onLine){
             $("#result").append($('<p style="font-size:30px">Teil pole internetti! Ühendage internetiga ja proovige uuesti!</p>'));
+        }
         else {
             //puastan vastuse divi ära
             $("#result").empty();
