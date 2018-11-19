@@ -1,6 +1,5 @@
 $(window).load(function () {
 
-
     if (!(navigator.onLine))
         $("#resultdiv").append($('<p style="font-size:30px">Teil pole internetti! Ühendage internetiga ja proovige uuesti!</p>'));
     else {

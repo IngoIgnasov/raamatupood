@@ -1,4 +1,8 @@
-CACHE MANIFEST
-templates/home/index.html
-templates/home/login.html
-static/js/smartId.js
+﻿CACHE MANIFEST
+
+CACHE:
+home/index.html
+home/login.html
+js/smartId.js
+js/raamat.js
+home/raamat.html

@@ -1,32 +1,24 @@
 $(function () {
     $("#smartIdButton").click(function (e) {
-
-
-        if (!(navigator.onLine)) {
-            $("#offlinediv").html("Sul puudub võrguühendus");
-            alert("pole netti");
-        }
-        else {
-            e.preventDefault();
-            $.ajax({
-                url: '/smart-id/authentication/start',
-                type: 'post',
-                dataType: 'json',
-                contentType: 'application/json',
-                success: function (data) {
-                    $("#verification-code-text").text(data.code);
-                    console.log("Success");
-                    console.log(data);
-                    pollResult();
-                },
-                error: function (data) {
-                    console.log("Failure");
-                    console.log(data);
-                    $("#verification-code-text").text("XXXX");
-                },
-                data: JSON.stringify(getFormData())
-            });
-        }
+        e.preventDefault();
+        $.ajax({
+            url: '/smart-id/authentication/start',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $("#verification-code-text").text(data.code);
+                console.log("Success");
+                console.log(data);
+                pollResult();
+            },
+            error: function (data) {
+                console.log("Failure");
+                console.log(data);
+                $("#verification-code-text").text("XXXX");
+            },
+            data: JSON.stringify(getFormData())
+        });
     })
 });
 
