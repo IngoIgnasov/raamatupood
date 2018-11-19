@@ -1,5 +1,4 @@
 CACHE MANIFEST
-contact.html
-index.html
-account.html
-raamatByCategory.js
+templates/home/index.html
+templates/home/login.html
+static/js/smartId.js

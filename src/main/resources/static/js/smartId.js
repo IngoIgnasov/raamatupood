@@ -1,25 +1,32 @@
+$(function () {
+    $("#smartIdButton").click(function (e) {
 
-$(function() {
-    $("#smartIdButton").click(function(e) {
-        e.preventDefault();
-        $.ajax({
-            url: '/smart-id/authentication/start',
-            type: 'post',
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (data) {
-                $("#verification-code-text").text(data.code);
-                console.log("Success");
-                console.log(data);
-                pollResult();
-            },
-            error: function (data) {
-                console.log("Failure");
-                console.log(data);
-                $("#verification-code-text").text("XXXX");
-            },
-            data: JSON.stringify(getFormData())
-        });
+
+        if (!(navigator.onLine)) {
+            $("#offlinediv").html("Sul puudub võrguühendus");
+            alert("pole netti");
+        }
+        else {
+            e.preventDefault();
+            $.ajax({
+                url: '/smart-id/authentication/start',
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (data) {
+                    $("#verification-code-text").text(data.code);
+                    console.log("Success");
+                    console.log(data);
+                    pollResult();
+                },
+                error: function (data) {
+                    console.log("Failure");
+                    console.log(data);
+                    $("#verification-code-text").text("XXXX");
+                },
+                data: JSON.stringify(getFormData())
+            });
+        }
     })
 });
 
@@ -47,7 +54,7 @@ function pollResult() {
 
 function getFormData() {
     var formDataAsJSON = {};
-    $.each($("form").serializeArray(), function(index, value) {
+    $.each($("form").serializeArray(), function (index, value) {
         formDataAsJSON[value.name] = value.value;
     });
     return formDataAsJSON;
