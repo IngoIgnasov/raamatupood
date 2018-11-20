@@ -1,10 +1,16 @@
 function onSignIn(googleUser) {
 
+
     var id_token = googleUser.getAuthResponse().id_token;
     console.log(id_token);
+
+    var profile = googleUser.getBasicProfile();
+
     sessionStorage.accountName = googleUser.getName();
     sessionStorage.accountEmail = googleUser.getEmail();
     sessionStorage.accountIMG = googleUser.imageURL();
+
+
     $.ajax({
         url: '/addKasutaja',
         type: 'POST',

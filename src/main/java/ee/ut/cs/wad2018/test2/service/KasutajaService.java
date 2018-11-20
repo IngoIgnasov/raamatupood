@@ -54,6 +54,4 @@ public class KasutajaService {
             System.out.println("Invalid ID token.");
         }
     }
-
-
 }
