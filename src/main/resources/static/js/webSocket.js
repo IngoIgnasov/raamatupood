@@ -2,13 +2,14 @@ var stompClient = null;
 console.log("ma olen siin");
 
 function connect() {
-    console.log("ma olen connectionis");
+
     var socket = new SockJS('/my-websocket');
+    console.log("ma olen connectionis1");
     stompClient = Stomp.over(socket);
+    console.log("ma olen connectionis2");
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
         stompClient.subscribe('/topic/subscriptions', function (greeting) {
-            var subscription = JSON.parse(greeting.body);
             console.log(subscription);
             showNotification(subscription);
         });
