@@ -21,7 +21,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 .antMatchers("/account/**").hasRole("USER")
-                .and().formLogin().loginPage("/login").failureUrl("/");
+                .and().formLogin().loginPage("/login").failureUrl("/")
+                .successForwardUrl("/account");
 
     }
 
